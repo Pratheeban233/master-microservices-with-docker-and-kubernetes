@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api-gateway" />
+        <module name="currency-conversion-service" />
+        <module name="currency-exchange" />
+        <module name="limit-service" />
+        <module name="spring-cloud-config" />
+        <module name="eureka-naming-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="1.8" />
+      <module name="currency-conversion-service" target="1.8" />
+      <module name="currency-exchange" target="1.8" />
+      <module name="eureka-naming-server" target="1.8" />
+      <module name="limit-service" target="1.8" />
+      <module name="spring-cloud-config" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="currency-conversion-service" options="-parameters" />
+      <module name="currency-exchange" options="-parameters" />
+      <module name="eureka-naming-server" options="-parameters" />
+      <module name="limit-service" options="-parameters" />
+      <module name="spring-cloud-config" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,14 @@
+#spring config client
+spring:
+  application:
+    name: limits-service
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://localhost:8888
+#    profile: dev
+#    name: custom-name
+
+limit-service:
+  minimum: 3
+  maximum: 500

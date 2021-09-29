@@ -1,0 +1,38 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: currency-exchange
+  config:
+    import: optional:configserver:localhost://8888
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    defer-datasource-initialization: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+resilience4j:
+  retry:
+    instances:
+      sample-api-breaker:
+        maxAttempts: 5
+        waitDuration: 2s
+        enableExponentialBackOff: true
+      sample2-api-braker:
+        maxAttempts: 10
+        waitDuration: 1s
+
+  ratelimiter:
+    instances:
+      sample1:
+        limitForPeriod: 2
+        limitRefreshPeriod: 10s
+        timeoutDuration: 3s
