@@ -16,9 +16,8 @@ public class CircuitBreakerController {
 	private Logger logger = LoggerFactory.getLogger(CircuitBreakerController.class);
 
 	// TODO Refer : https://resilience4j.readme.io/docs for more info.
-	/*
-	all the configuration has 'default' as default configuration.
-	We can modify as we want using properties.
+	/*	all the configuration has 'default' as default configuration.
+		We can modify as we want using properties.
 	 */
 
 	@GetMapping(path = "/test-circuitBreaker")
