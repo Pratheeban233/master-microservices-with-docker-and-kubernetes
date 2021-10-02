@@ -6,6 +6,9 @@ spring:
     name: currency-conversion
   config:
     import: optional:configserver:localhost://8888
+  sleuth:
+    sampler:
+      probability: 1.0
 
 eureka:
   client:

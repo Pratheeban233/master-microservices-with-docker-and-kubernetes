@@ -1,5 +1,6 @@
 package com.tutorial.microservices.currencyconversionservice;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import java.util.Objects;
 
 @RestController
 @RequestMapping(path = "currency-conversion")
+@Slf4j
 public class CurrencyConnversionController {
 
 	@Autowired
@@ -22,6 +24,7 @@ public class CurrencyConnversionController {
 	@GetMapping(path = "/{from}/to/{to}/quantity/{quantity}")
 	public CurrencyConversion getConversionValue (@PathVariable String from, @PathVariable String to,
 			@PathVariable BigDecimal quantity) {
+		log.info("getConversionValue method called with param {} to {}",from,to);
 		ResponseEntity<CurrencyConversion> conversion =
 				new RestTemplate().getForEntity("http://localhost:8000/currency-exchange/" + from + "/to/" + to, CurrencyConversion.class);
 		CurrencyConversion currencyConversion = conversion.getBody();

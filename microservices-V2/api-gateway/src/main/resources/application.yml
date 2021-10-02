@@ -4,13 +4,16 @@ server:
 spring:
   application:
     name: api-gateway
+  # below configuration no longer needed when configure the router configuration
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
           lowerCaseServiceId: true
-
+  sleuth:
+    sampler:
+      probability: 1.0
 eureka:
   client:
     serviceUrl:
