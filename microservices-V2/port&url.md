@@ -40,10 +40,17 @@ Spring Cloud Bus Refresh	http://localhost:8080/actuator/bus-refresh (POST)
 ****************************************
 
 My Urls - before routing
--------
+------------------------
 currency conversion
     rest -   http://localhost:8100/currency-conversion/currency-conversion/USD/to/INR/quantity/50
     feign-   http://localhost:8100/currency-conversion/currency-conversion/feign/USD/to/INR/quantity/50
     
 api gateway
     http://localhost:8765/currency-conversion/currency-conversion/feign/USD/to/INR/quantity/50
+    
+Routed URl:
+-----------
+http://localhost:8765/currency-exchange/USD/to/INR
+http://localhost:8765/currency-conversion/EUR/to/INR/quantity/100
+http://localhost:8765/currency-conversion/feign/EUR/to/INR/quantity/100
+http://localhost:8765/currency-conversion-test/feign/EUR/to/INR/quantity/100
