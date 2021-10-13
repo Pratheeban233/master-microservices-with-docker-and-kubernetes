@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   currency-exchange:
-    image: prathi233/mmv2-currency-exchange:0.0.1-SNAPSHOT
+    image: mmv2-currency-exchange:0.0.1-SNAPSHOT
     ports:
       - "8000:8000"
     mem_reservation: 700m
@@ -19,7 +19,7 @@ services:
       RABBIT_URI: amqp://guest:guest@rabbitmq:5672
 
   currecy-conversion:
-    image: prathi233/mmv2-currency-conversion-service:0.0.1-SNAPSHOT
+    image: mmv2-currency-conversion-service:0.0.1-SNAPSHOT
     ports:
       - "8100:8100"
     mem_reservation: 700m

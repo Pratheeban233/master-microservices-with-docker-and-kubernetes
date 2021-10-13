@@ -92,6 +92,7 @@
 						</exclude>
 					</excludes>
 					<image>
+						<!-- to build image : mvn spring-boot:build-image -DskipTests-->
 						<name>prathi233/mmv2-${project.artifactId}:${project.version}</name>
 					</image>
 					<pullPolicy>IF_NOT_PRESENT</pullPolicy>

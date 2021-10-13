@@ -1,0 +1,15 @@
+<!-- 
+   *** DATA BINDING ***
+INTERPOLATION => UserName : {{username}} 
+EVENT => (event) like (click)
+TWO WAY BINDING => [(ngModel)]='username'
+-->
+
+<small *ngIf = 'invalidLogin'>{{invalid_credentials}}</small>
+
+<div>
+User Name : <input type="text" name="username" [(ngModel)]="username"/>
+Password  : <input type="password" name="password" [(ngModel)]="password"/>
+
+<button (click) = handleLogin()>login</button>
+</div>
